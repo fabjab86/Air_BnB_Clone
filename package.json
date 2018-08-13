@@ -1,0 +1,29 @@
+{
+  "name": "pop-a-nola",
+  "version": "1.0.0",
+  "description": "AirBNB clone",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velvetsnowman/pop-a-nola.git"
+  },
+  "keywords": [
+    "airbnb",
+    "makers"
+  ],
+  "author": "A Wolff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velvetsnowman/pop-a-nola/issues"
+  },
+  "homepage": "https://github.com/velvetsnowman/pop-a-nola#readme",
+  "devDependencies": {
+    "jasmine-node": "^1.15.0"
+  }
+}
