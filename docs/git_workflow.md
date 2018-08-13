@@ -1,5 +1,14 @@
 Git Workflow for Pop-a-nola
 ===========================
+Basic principles:
+- Master is always deployable  
+- User stories and testing always done in a branch  
+- Branch names are descriptive  
+- Commit messages are informative  
+- Add pull requests with @mentions for the team
+- 2 people review and approve the pull request  
+- Approved PR's can be merged with master  
+
 
     $ git clone https://github.com/velvetsnowman/pop-a-nola.git
 
