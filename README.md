@@ -86,4 +86,4 @@ Getting Started
 to be added
  - what frameworks we have used
  - how to download/use the app
- - tests examples
+ - test examples
