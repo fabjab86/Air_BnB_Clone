@@ -7,8 +7,10 @@ Basic principles:
 - Commit messages are informative  
 - Add pull requests with @mentions for the team
 - 2 people review and approve the pull request  
-- Approved PR's can be merged with master  
+- Approved PR's can be merged with master 
 
+Git Workflow for Pop-a-nola
+===========================
 
     $ git clone https://github.com/velvetsnowman/pop-a-nola.git
 
@@ -29,11 +31,7 @@ Checkout a branch for your feature before doing **anything**:
 ..work on things in your favourite text $EDITOR..
 
     $ git add [files]
-    $ git commit
-
-or
-
-    $ git commit -a
+    $ git commit -m 'commit message'
 
 with a sensible commit message. Your commit is now on your local repository.
 
@@ -87,7 +85,8 @@ to perform the merge. You're expecting to see something like the following _exam
 
 Fix up the files manually in your editor, and commit the result again:
 
-    $ git commit -a
+    $ git add .
+    $ git commit -m 'commit message'
 
 Then, push this commit to the remote my-awesome-feature branch using the same command as earlier:
 
