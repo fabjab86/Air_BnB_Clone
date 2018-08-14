@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose",
+    "buildDB": "jake --jakefile jake.js makeDatabases",
+    "dropDB": "jake --jakefile jake.js dropDatabases"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,8 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "fibers": "^3.0.0"
+    "fibers": "^3.0.0",
+    "jake": "^8.0.18",
+    "pg": "^7.4.3"
   }
 }
