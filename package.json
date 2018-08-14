@@ -37,8 +37,10 @@
     "webdriverio": "^4.13.1"
   },
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "fibers": "^3.0.0",
+    "grunt-cli": "^1.2.0",
     "jake": "^8.0.18",
     "pg": "^7.4.3"
   }
