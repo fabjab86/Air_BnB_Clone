@@ -87,3 +87,31 @@ to be added
  - what frameworks we have used
  - how to download/use the app
  - test examples
+
+Getting Started
+-------
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+Prerequisites
+This requires Node to run it and npm as the package manager to simplify the build process and include all necessary dependencies. If you do not have Node.js installed it is recommended you do so (Node).
+
+Installing
+======
+To get started please follow the subsequent steps.
+
+$ git clone link!!!!!
+$ cd <repo name>
+$ npm install
+
+1. Use Homebrew to install the package
+We can use the package manager Homebrew to start the install of PostgreSQL:
+
+`$> brew install postgresql`
+After Homebrew has downloaded PostgreSQL it will show you some installation instructions. Make sure you follow them!
+
+2. Create the databases and tables
+In order to start the app you will need to create the databases that the server will connect to. To do this you can use a helpful script which has been defined in the package.json file. Simply run `npm run buildDB`. This should create both a development and test database called mailbox and testmailbox. It will also create a table called listings inside each of these databases.
+
+To drop these tables run `npm run dropDB`
+
+
