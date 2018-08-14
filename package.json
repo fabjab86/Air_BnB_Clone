@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "cypress:open": "cypress open",
     "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose",
     "buildDB": "jake --jakefile jake.js makeDatabases",
     "dropDB": "jake --jakefile jake.js dropDatabases"
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/velvetsnowman/pop-a-nola#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "cypress": "^3.1.0",
     "grunt": "^1.0.3",
     "grunt-webdriver": "^2.0.3",
     "jasmine-node": "^1.15.0",
