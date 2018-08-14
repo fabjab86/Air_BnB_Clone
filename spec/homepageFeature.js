@@ -7,7 +7,7 @@ describe('homepage', function () {
     browser
       .url('http://localhost:3000')
       .getText('body', function(err, text) {
-        expect(text).to.equal('Hello world')
+        expect(text).to.equal('MakersBnB')
       })
       .call(done);
     });
