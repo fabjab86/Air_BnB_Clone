@@ -3,11 +3,10 @@ var expect = chai.expect;
 
 describe('homepage', function () {
 
-  it('hello worlds', function(done) {
-    browser
-      .url('http://localhost:3000')
-      .getText('body', function(err, text) {
-        expect(text).to.equal('MakersBnB')
+  it('should be a welcome page', function(done) {
+    browser.url('http://localhost:3000')
+    browser.getText('body', function(err, text) {
+    expect(page).to.have.text('MakersBnB')
       })
       .call(done);
     });
