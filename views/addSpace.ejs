@@ -6,7 +6,7 @@
   <h1> Add a Space</h1>
   <p>Tell people abut your space</p>
     <div id ="form-div">
-      <form action= "/add-confirmation">
+      <form action= "/add-space" method="post">
         <label>Owner:</label>
         <input type="text" name="owner" id='owner'>
         <br>
@@ -17,8 +17,11 @@
         <label>Price per night:</label>
         <input type="text" name="price" id='price'>
         <br>
-        <label>Contact:</label>
-        <input type="text" name="contact" id='contact'>
+        <label>Title:</label>
+        <input type="text" name="title" id='title'>
+        <br>
+        <label>Listing Description:</label>
+        <input type="text" name="listing_desc" id='listing_desc'>
         <input type="submit" value="Submit">
     </form>
 
