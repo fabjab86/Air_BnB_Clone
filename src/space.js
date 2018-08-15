@@ -14,7 +14,7 @@ function Space(){
 
 Space.prototype.addSpace = function(){
   clientDev.connect()
-  clientDev.query("INSERT INTO listings (title, listing_desc, owner, price, address) VALUES ("`${this.title}`", "`${this.listing_desc}`", "`${this.owner}`", "`${this.price}`", "`${this.address}`");", (err, res) => {
+  clientDev.query('INSERT INTO listings (title, listing_desc, owner, price, address) VALUES ("`${this.title}`", "`${this.listing_desc}`", "`${this.owner}`", "`${this.price}`", "`${this.address}`");', (err, res) => {
     console.log(err, res)
     clientDev.end()
   })
