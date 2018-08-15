@@ -3,11 +3,13 @@ var app = express();
 const bodyParser = require('body-parser');
 var ejs = require('ejs');
 var path = require('path');
-const pg = require('pg')
-const dbDev = require('./config')['development']['dbConnectionString']
-const clientDev = new pg.Client(dbDev)
+const pg = require('pg');
+const dbDev = require('./config')['development']['dbConnectionString'];
+const clientDev = new pg.Client(dbDev);
+var Space = require('./src/space.js');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.get('/', function(req, res) {
     res.render(path.join(__dirname + '/views/index.ejs'));
 });
@@ -33,19 +35,17 @@ app.get('/add-confirmation', function(req, res) {
 });
 
 app.post('/add-space', function(req, res) {
-  console.log('post body', req.body);
-
-  clientDev.connect()
-
-  const sql = 'INSERT INTO listings (title, listing_desc, owner, price, address) VALUES ($1, $2, $3, $4, $5);'
-  const params = [req.body.title, req.body.listing_desc, req.body.owner, req.body.price, req.body.address];
-  clientDev.query(sql, params).then(function(result){
-    console.log('result?', result);
-    res.redirect('/add-confirmation');
-  }).catch(function(err){
-    console.log('err', err);
-    res.redirect('/add-confirmation');
-  });
+    const sql = 'INSERT INTO listings (title, listing_desc, owner, price, address) VALUES ($1, $2, $3, $4, $5);'
+    const params = [req.body.title, req.body.listing_desc, req.body.owner, req.body.price, req.body.address];
+    console.log('post body', req.body);
+    var space = new Space()
+    space.addSpace(sql, params).then(function(result){
+      console.log('result?', result);
+      res.redirect('/add-confirmation');
+    }).catch(function(err){
+      console.log('err', err);
+      res.redirect('/add-confirmation');
+    });
 });
 
 

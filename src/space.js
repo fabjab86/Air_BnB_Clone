@@ -1,6 +1,13 @@
-const pg = require('pg')
-const dbDev = require('../config')['development']['dbConnectionString']
-const clientDev = new pg.Client(dbDev)
+const bodyParser = require('body-parser');
+const pg = require('pg');
+const dbDev = require('../config')['development']['dbConnectionString'];
+const clientDev = new pg.Client(dbDev);
+var express = require('express');
+var app = express();
+var ejs = require('ejs');
+var path = require('path');
+
+
 
 function Space(){
 
@@ -12,18 +19,17 @@ function Space(){
 
 }
 
-Space.prototype.addSpace = function(){
-  clientDev.connect()
-  clientDev.query('INSERT INTO listings (title, listing_desc, owner, price, address) VALUES ("`${this.title}`", "`${this.listing_desc}`", "`${this.owner}`", "`${this.price}`", "`${this.address}`");', (err, res) => {
-    console.log(err, res)
-    clientDev.end()
-  })
+Space.prototype.addSpace = function(query, params){
+  clientDev.connect();
+  return clientDev.query(query, params);
 }
 
-Space.prototype.viewSpaces = function(){
-  clientDev.connect()
-  clientDev.query('SELECT * FROM listings;', (err, res) => {
-    console.log(err, res)
-    clientDev.end()
-  })
-}
+  // viewSpaces: function(){
+  //   clientDev.connect()
+  //   clientDev.query('SELECT * FROM listings;', (err, res) => {
+  //     console.log(err, res)
+  //     clientDev.end()
+  //   })
+  // }
+
+module.exports = Space;
