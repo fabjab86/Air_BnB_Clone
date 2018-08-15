@@ -9,14 +9,14 @@ var path = require('path');
 
 
 
-function Space(){
+var Space = function(){
 
-}
+};
 
 Space.prototype.addSpace = function(query, params){
   clientDev.connect();
   return clientDev.query(query, params);
-}
+};
 
   // viewSpaces: function(){
   //   clientDev.connect()
