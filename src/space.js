@@ -11,12 +11,6 @@ var path = require('path');
 
 function Space(){
 
-  this.title;
-  this.listing_desc;
-  this.owner;
-  this.price;
-  this.address;
-
 }
 
 Space.prototype.addSpace = function(query, params){
