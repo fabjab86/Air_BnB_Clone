@@ -15,7 +15,7 @@ Space.prototype.addSpace = function(query, params){
   clientDev.query(query, params);
 };
 
-Space.prototype.viewSpaces = function(){
+Space.prototype.viewAllSpaces = function(){
   // clientDev.connect();
   clientDev.query('SELECT * FROM listings;');
 }

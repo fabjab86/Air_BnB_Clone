@@ -1,9 +1,6 @@
-const pg = require('pg');
-const dbTest = require('../config')['test']['dbConnectionString']
-const clientTest = new pg.Client(dbTest)
 const Space = require('../src/space.js')
 
-describe('Airbnb', function(){
+describe('Spaces', function(){
 
   var space;
 
@@ -12,19 +9,24 @@ describe('Airbnb', function(){
   });
 
   describe('adding', function(){
-
     it('should let an owner add a space to the database', function(){
-      space.addSpace(('INSERT INTO listings (title, listing_desc, owner, price, address) VALUES ($1, $2, $3, $4, $5);'),("Makers Academy", "A coding bootcamp", "Daniel", 10, "50 commercial street"));
-      expect(space.viewSpaces()).toContain("50 commercial street");
+      var query = 'INSERT INTO listings (title, listing_desc, owner, price, address) VALUES ($1, $2, $3, $4, $5);'
+      var params = ["Test title", "this is a house", "Stephanie", 20000, "12 Cheese Land"];
+      space.addSpace(query, params);
+      expect(space.checkDatabase()).toContain("Test title");
     });
+  });
 
+  describe('established connection to the databse', function(){
+    it('returns true if connected', function(){
+      expect(space.isConnected()).toEqual(true);
+    });
+  });
+
+  describe('views all spaces', function(){
+    it('checks if user can see list of listings', function(){
+      space.viewAllSpaces();
+      expect(space.viewAllSpaces()).toEqual(space.checkDatabase());
+    });
   });
 });
-  // describe('viewing', function(){
-  //
-  //   it('should let a user view all the spaces available for leasing', function(){
-  //     space.addSpace("14 windmill road SW18 2EU", 10, "Daniel", 7777777777);
-  //     expect(space.viewSpaces()).toContain("14 windmill road SW18 2EU");
-  //   });
-  //
-  // });
