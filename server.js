@@ -7,6 +7,7 @@ const pg = require('pg')
 const dbDev = require('./config')['development']['dbConnectionString']
 const clientDev = new pg.Client(dbDev)
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/', function(req, res) {
     res.render(path.join(__dirname + '/views/index.ejs'));
