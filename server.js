@@ -44,9 +44,23 @@ app.get('/all', function(req, res) {
 });
     
 
-
-app.get('/view-space', function(req, res) {
-    res.render(path.join(__dirname + '/views/viewSpace.mustache'));
+app.get('/viewSpace/:id', function(req, res) {
+    const clientDev = new pg.Client(dbDev);
+    clientDev.connect()
+    
+    .then(() => {
+        const sql1 = 'SELECT * FROM listings WHERE id = $1;'
+        const params1 = [req.params.id];
+      return clientDev.query(sql1, params1);
+    })
+    .then((results) => {
+      console.log('results?', results);
+      res.render(path.join(__dirname + '/views/viewSpace.mustache'), results);
+    })
+    .catch((err) => {
+      console.log('error', err)
+    });
+    
 });
 
 app.get('/booking-confirmation', function(req, res) {
