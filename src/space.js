@@ -16,7 +16,7 @@ Space.prototype.viewAllSpaces = function(){
 
   clientDev.query(
     'SELECT * FROM listings;',
-    function(data){}
+    function(data){ }
   )
 };
 

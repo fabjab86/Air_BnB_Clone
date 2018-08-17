@@ -18,13 +18,13 @@ describe('Spaces', function(){
   });
 
   describe('established connection to the databse', function(){
-    xit('returns true if connected', function(){
+    it('returns true if connected', function(){
       expect(space.isConnected()).toEqual(true);
     });
   });
 
   describe('views all spaces', function(){
-    xit('checks if user can see list of listings', function(){
+    it('checks if user can see list of listings', function(){
       space.viewAllSpaces();
       expect(space.viewAllSpaces()).toEqual(space.checkDatabase());
     });
