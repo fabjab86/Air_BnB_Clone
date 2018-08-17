@@ -10,8 +10,12 @@
       {{#rows}}
         <tr>
           <td>{{title}}</td>
-          <td>{{listing_desc}}</td>
           <td>{{owner}}</td>
+          <td>
+            <form method="GET" action="viewSpace/{{id}}">
+            <button type="submit">view</button>
+            </form>
+          </td>
         </tr>
       {{/rows}}
 

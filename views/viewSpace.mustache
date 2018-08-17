@@ -1,23 +1,24 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="./viewSpace.css">
+  
 </head>
 
 <body>
 <p>Information about your selected space</p>
 
 <div>
-  <label>Owner:</label>
-  <p name="owner">Owner info</p>
-  <label>Address:</label>
-  <p name="address">Address info</p>
-  <label>Price per night:</label>
-  <p name="price">Price info</p>
-  <label>Title:</label>
-  <p name="title">title info</p>
-  <label>Listing Description:</label>
-  <p name="listing_desc">listing info</p>
+    <table>
+      {{#rows}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{owner}}</td>
+        </tr>
+      {{/rows}}
 
-</div>
+    </table>
+    <p name="viewTitle">title</p>
+    <img name="image">
+    <a href="/view-space"><button id="viewThisSpace">View Space</button></a>
+  </div>
 <div>
   <a href="/booking-confirmation"><button id="book">Book</button></a>
   <a href="/all"><button id="back">Back</button></a>
