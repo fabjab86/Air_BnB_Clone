@@ -44,7 +44,9 @@
     "express": "^4.16.3",
     "fibers": "^3.0.0",
     "grunt-cli": "^1.2.0",
+    "handlebars": "^4.0.11",
     "jake": "^8.0.18",
+    "mustache-express": "^1.2.7",
     "pg": "^7.4.3"
   }
 }

@@ -10,14 +10,22 @@ var Space = function(){
 Space.prototype.addSpace = function(query, params){
   clientDev.connect();
   clientDev.query(query, params);
+  
 };
 
 Space.prototype.viewAllSpaces = function(){
 
-  clientDev.query(
-    'SELECT * FROM listings;',
-    function(data){ }
-  )
+  clientDev.connect()
+    .then(() => {
+      return clientDev.query('SELECT * FROM listings;');
+    })
+    .then((results) => {
+      console.log('results?', results);
+      //res.render('book-list');
+    })
+    .catch((err) => {
+      console.log('error', err)
+    });
 };
 
 Space.prototype.checkDatabase = function(){
