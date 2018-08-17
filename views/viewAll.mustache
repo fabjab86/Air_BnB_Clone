@@ -1,30 +1,38 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./viewAll.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 </head>
 
 <body>
 
-  
+
   <div>
+
+
     <table>
+
       {{#rows}}
+
         <tr>
-          <td>{{title}}</td>
-          <td>{{owner}}</td>
-          <td>
+
+          <td id ="title">title: {{title}}<br>Owner: {{owner}}
+
+
             <form method="GET" action="viewSpace/{{id}}">
-            <button type="submit">view</button>
+            <button id = "view" type="submit">view</button>
+
             </form>
           </td>
+
         </tr>
+
       {{/rows}}
 
+
     </table>
-    <p name="viewTitle">title</p>
-    <img name="image">
     <a href="/view-space"><button id="viewThisSpace">View Space</button></a>
   </div>
- 
+
 
 
 
