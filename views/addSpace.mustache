@@ -1,10 +1,14 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./addSpace.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 </head>
-
 <body>
+  <div id ="main-container">
+    <div class = "toptext">
   <h1> Add a Space</h1>
   <p>Tell people abut your space</p>
+</div>
+  <div>
     <div id ="form-div">
       <form action= "/add-space" method="post">
         <label>Owner:</label>
@@ -22,11 +26,12 @@
         <br>
         <label>Listing Description:</label>
         <input type="text" name="listing_desc" id='listing_desc'>
-        <input type="submit" value="Submit">
+        <input id="submit" type="submit" value="Submit">
     </form>
-
   <div>
       <a href="/"><button id="back">Back</button></a>
   </div>
-    </div>
+</div>
+</div>
+</div>
 </body>
