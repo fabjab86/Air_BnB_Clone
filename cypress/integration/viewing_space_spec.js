@@ -6,10 +6,10 @@ describe('Tests viewing a space', function() {
     cy.get('#owner').type('Daniel')
     cy.get('#address').type("52 commercial street")
     cy.get('#price').type("5.00")
-    cy.get('#contact').type("7777777")
-    cy.get('form').submit()
+    cy.get('#title').type("New Room in Amazing area")
+    cy.contains('Submit').click()
     cy.visit('localhost:3000/all')
-    cy.contains('52 commercial street')
+    cy.contains('New Room in Amazing area')
   })
 
 })
