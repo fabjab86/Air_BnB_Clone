@@ -81,39 +81,27 @@ I would like to get a response from the owner of that space.
 ```
 
 Getting Started
-==================
-
-to be added
- - what frameworks we have used
- - how to download/use the app
- - test examples
-
-Getting Started
 -------
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 Prerequisites
-This requires Node to run it and npm as the package manager to simplify the build process and include all necessary dependencies. If you do not have Node.js installed it is recommended you do so (Node).
+This requires Node to run it and [npm](https://www.npmjs.com/get-npm) as the package manager to simplify the build process and include all necessary dependencies. If you do not have Node.js installed you can download it from [here](https://nodejs.org/en/download/)
 
-Installing
+How to use
 ======
-To get started please follow the subsequent steps.
+`git clone https://github.com/fabjab86/Air_BnB_Clone`
+`cd Air_BnB_Clone`
+`npm install`  
+`npm run buildDB` to create a database  
+When you are done with running the application `npm run dropDB` to drop the database    
+`npm start` to start the server
 
-$ git clone link!!!!!
-$ cd <repo name>
-$ npm install
 
 1. Create the databases and tables
-In order to start the app you will need to create the databases that the server will connect to. To do this you can use a helpful script which has been defined in the package.json file. Simply run `npm run buildDB`. This should create both a development and test database called popanola and testpopanola. It will also create a table called listings inside each of these databases.
+In order to start the app you will need to create the databases that the server will connect to. This should create both a development and test database called popanola and testpopanola. It will also create a table called listings inside each of these databases.
 
-To drop these tables run `npm run dropDB`
-
-2. Start local server by running `node server.js`
-
-Testing
-------
-
-Web based feature testing with Cypress:
-Run `npm run cypress:open`
-
-Unit testing with Jasmine:
+How to test with cypress:
+==============
+Make sure the server is running `npm start`  
+Run `npm run cypress:open`  
+You will see 3 test files, click on each one to run the tests
