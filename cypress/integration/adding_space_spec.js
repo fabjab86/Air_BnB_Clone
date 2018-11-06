@@ -10,8 +10,8 @@ describe('Tests adding a space', function() {
     cy.get('#owner').type('Daniel')
     cy.get('#address').type("52 commercial street")
     cy.get('#price').type("5.00")
-    cy.get('#contact').type("7777777")
-    cy.get('form').submit()
+    cy.get('#title').type("Amazing room")
+    cy.contains('Submit').click()
     cy.contains('Your new space has been added.')
   })
 
